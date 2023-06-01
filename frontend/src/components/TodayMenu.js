@@ -6,15 +6,13 @@ import { useState,useEffect } from 'react'
 
 const TodayMenu = () => {
 
-
-  const [message, setMessage] = useState('');
+  const [fruits, setFruits] = useState('');
   useEffect(() =>{
-    fetch('/api')
+    fetch('/fruits')
       .then((res) => res.json())
-      .then((data) => setMessage(data.message));
+      .then((data) => setFruits(data[0].image ));
   },[])
-
-
+ 
   const handleClick = async () => {
     await fetch("/img", {
       method: "POST",
@@ -31,7 +29,7 @@ const TodayMenu = () => {
   return (
     <div>
     <Navigation />
-    <p>{message}</p>
+    <p>{fruits}</p>
     <button onClick={handleClick}>post</button>
       本日のメニューを動的に追加及び削除できるシステムで管理者のみ変更できるようにしたい
     </div>
