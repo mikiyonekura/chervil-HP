@@ -22,16 +22,15 @@ function App() {
     <div className="App">
       <Header />
       
-      <p>{message}</p>
+      
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/TodayMenu" element={<TodayMenu/>}/>
         <Route path="/Parking" element={<Parking/>}/>
         <Route path="/Galary" element={<Galary/>}/>
         <Route path="/Form" element={<Form/>}/>
-
       </Routes>
-
+      <p>{message}</p>
       <Footer />
   
     </div>
