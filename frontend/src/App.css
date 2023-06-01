@@ -1,38 +1,224 @@
+@import url("keyframes.css");
+
 .App {
   text-align: center;
+  display: block;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*スライドショー-----------------------------------------------------------------*/
+.slide{
+  margin: 0;
+}
+.slide #mainimg{
+  
+
+}
+.slide img{
+  width: 100%;
+  height: 100%;
+  display: block;
+
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*ロゴ----------------------------------------------------------------------------------*/
+.logo img{
+  padding: 0;
+  margin: 0;
+  width: 350px;
 }
 
-.App-link {
-  color: #61dafb;
+/*footer--------------------------------------------------------------------*/
+footer {
+	font-size: 80%;	/*文字サイズ*/
+	background: #4b4a4a;	/*背景色*/
+	color: #ccc;		/*文字色*/
+  
+}
+footer a {color: #ccc;}
+footer a:hover {color: #fff;}
+footer ul{
+  margin: 10px;
+  float: left;
+  width: 20%;
+}
+#footermenu {
+	overflow: hidden;
+	padding: 30px 0;	/*上下、左右へのボックス内の余白*/
+	
+}
+#footermenu ul li a{
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*contents---------------------------------------------------------*/
+
+#contents {
+	padding: 0px 0 50px;	/*上、左右、下へのコンテンツ内の余白*/
+	position: relative;
+	animation-name: opa2;	/*keyframes.cssで使う@keyframesの指定*/
+	animation-duration: 0.5S;	/*アニメーションの実行時間*/
+	animation-delay: 0.5s;		/*出現するタイミング（秒後）*/
+	animation-fill-mode: both;
+  font-family: HiraMinProN-W3
+  
+
+  
+}
+#contents h2{
+  letter-spacing: 0.2em;
+  font-size: 200%;
+  font-family: HiraMinProN-W3
+}
+/*h2タグ内のspanタグ（装飾文字）*/
+#contents h2 span {
+	display: block;
+	font-size: 30%;	/*文字サイズ*/
+	color: #999;		/*文字色*/
+}
+
+/*list-column（トップページで使っている３列ブロック）
+---------------------------------------------------------------------------*/
+/*カラムブロック全体を囲むボックス*/
+#contents .list-column-container {
+	display: flex;
+	justify-content: space-between;	/*中のブロックの横並びの揃え方*/
+	flex-wrap: wrap;				/*中のブロックを自動で折り返す*/
+	margin: 0 3%;
+}
+/*１カラムあたりの設定*/
+#contents .list-column {
+	display: flex;
+	flex-direction: column;			/*中のブロックを並べる向きの指定。これは縦に並べる意味。*/
+	width: 32%;						/*ブロック幅*/
+	margin-bottom: 20px;			/*ブロックの下に空ける余白*/
+	background: #402e1c;				/*背景色*/
+	color: #fff;					/*文字色*/
+	border-radius: 5px;				/*角丸の指定。ほんの少し角が丸くなります。*/
+	overflow: hidden;				/*角丸から内容が飛び出ないよう、飛び出た部分を非表示にする指定*/
+}
+/*リンクテキストの文字色*/
+#contents .list-column a {
+
+	color: #fff;
+}
+/*ボックス内のh4（見出し）タグ*/
+#contents .list-column h4 {
+	margin-bottom: 20px;	/*下のテキストとの間に空けるスペース*/
+	font-size: 140%;		/*文字サイズ*/
+}
+/*ボックス内のp（段落）タグ*/
+#contents .list-column p {
+	padding: 0;		/*余白のリセット*/
+	font-size: 80%;
+}
+
+/*「class="text"」を指定したブロック。テキストブロック。*/
+#contents .list-column .text {
+	padding: 5%;			/*ブロック内の余白*/
+	flex: auto;
+}
+
+.list-column .btn1 img{
+  width: 30px;
+}
+/*------------------------------------------------------------*/
+
+/*ボックス内のボタン（共通）*/
+.btn1{
+  margin: 0;
+}
+.btn1 a {
+	display: block;
+	line-height: 30px;
+	height: 30px;
+	text-decoration: none;
+	border-top: 1px solid #fff;		/*枠線の幅、線種、色*/
+	text-align: center;			/*テキストをセンタリング*/
+	padding: 10px 30px;			/*上下、左右へのボタン内の余白*/
+	margin: 40px auto 0;		/*上、左右、下へのボックスの外側への余白*/
+}
+/*ボタンのマウスオン時（共通）*/
+.btn1 a:hover {
+	background: #535252;	/*背景色*/
+	color: #b3adad !important;		/*文字色*/
+}
+
+.parking{
+  margin: 30px;
+}
+
+/*ナビゲーションバー--------------------------------------------------------------------*/
+#menubar {
+	position: relative;
+  z-index: 10;
+	text-align: center;	/*文字を中央に*/
+	background: #fff;	/*背景色*/
+	border-top: 1.5px solid #ccc;		/*上の線の幅、線種、色*/
+	border-bottom: 1.5px solid #ccc;	/*下の線の幅、線種、色*/
+	height: 105px;
+  font-family: HiraMinProN-W3;	
+
+}
+
+/*メニュー１個あたりの設定*/
+#menubar ul li {
+	float: left;	/*左に回り込み*/
+	width: 33%;		/*幅。今回は５個なので、100÷5=20。*/
+	font-size: 20px;	/*文字サイズ*/
+}
+#menubar ul {
+  list-style: none;
+}
+#menubar ul li a {
+	text-decoration: none;
+  display: block;
+  color: black;
+	height: 85px;		/*メニューブロックの高さ。ここの「85」と、下の行の「20」を合計した「105」の数字と、上の「#menubar」の「height」および下のfixmenu設定に２箇所ある「margin-top」の数字を合わせて下さい。*/
+	padding-top: 20px;	/*メニューブロックの高さプラス、上に空ける余白。メニューテキストの上下の配置バランスをここで調整して下さい。※変更の際は、上の行の注意書きもしっかり読んで下さい。*/
+}
+#menubar ul li a:hover{
+  color: brown;
+}
+/*飾り文字*/
+#menubar ul li span {
+	display: block;
+	font-size: 10px;	/*文字サイズ*/
+	color: #999;		/*文字色*/
+	letter-spacing: 0.2em;	/*文字間隔を少し広くとる設定*/
+}
+
+
+/*　↑ナビゲーションバー--------------------------------------------------------------------*/
+
+/*news-----------------------------------------------------*/
+/*見出しを含まないお知らせブロック*/
+#new dl {
+	padding: 0px 20px;		/*上下、左右へのブロック内の余白*/
+}
+/*日付設定*/
+#new dt {
+	float: left;
+	width: 9em;		/*幅*/
+	letter-spacing: 0.1em;
+}
+/*記事設定*/
+#new dd {
+	padding-left: 9em;
+}
+
+.newicon {
+	background: #F00;	/*背景色*/
+	color: #FFF;		/*文字色*/
+	font-size: 70%;		/*文字サイズ*/
+	line-height: 1.5;
+	padding: 2px 5px;
+	border-radius: 2px;
+	margin: 0px 5px;
+	vertical-align: text-top;
 }
