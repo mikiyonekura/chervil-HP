@@ -6,7 +6,7 @@ import Navigation from "./Navigation";
 const TodayMenu = () => {
 
   const handleClick = async () => {
-    await fetch("/img", {
+    await fetch("../img", {
       method: "POST",
       mode: "cors",
       headers: {
