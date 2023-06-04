@@ -11,6 +11,8 @@ import Galary from "./components/Galary";
 import Form from "./components/Form";
 
 function App() {
+
+  
   const [message, setMessage] = useState('');
   useEffect(() =>{
     fetch('/api')
@@ -30,7 +32,7 @@ function App() {
         <Route path="/Galary" element={<Galary/>}/>
         <Route path="/Form" element={<Form/>}/>
       </Routes>
-      <p>{message}</p>
+      {/*<p>{message}</p>*/}
       <Footer />
   
     </div>
