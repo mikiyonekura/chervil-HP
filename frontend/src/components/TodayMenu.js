@@ -7,31 +7,45 @@ import SweatsList from './SweatsList';
 
 const TodayMenu = () => {
 
-  
-  const [fruits, setFruits] = useState('');
- /*   
- useEffect(() =>{
-    fetch('/fruits')
-      .then((res) => res.json())
-      .then((data) => setFruits(data.name));
-  },[]) */
-
   //非同期でpostボタンが押されるたびにpost通信を行う
-  const handleClick = async (addText) => {
-    await fetch("/img", {
+  const handleClick = async (inputText) => {
+    await fetch("/sweats", {
       method: "POST",
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ nameOfSweets: "オートミールチョコクッキー",name: addText}),
+      body: JSON.stringify({ nameOfSweats: inputText}),
     })
       .then((response) => response.json())
-      //.then((data) => console.log(data));
+      .then((data) => {
+
+        const image = data.image;
+        const price = data.price;
+        const ingre = data.ingre;
+
+        /*...は一つ前の状態を指す。つまり前の状態のtasklistに対してinputTextを
+        入れることを指す.状態はどんどん増えていく*/
+        setTaskList([
+          ...taskList, 
+          //handledelteで使うためにidも設定
+          {id: taskList.length,
+          text: inputText,
+          image: image,
+          ingre: ingre,
+          price: price,
+
+          }
+        ]);
+
+        console.log(taskList);
+        //ボタンが押されたらテキストボックスの中身を空にする
+        setInputText("");
+
+      });
 
   };
-
-
+  
   
   //tasklistっていう配列を作って、setTaskListで更新していく
   const [taskList, setTaskList] = useState([]);
@@ -47,25 +61,12 @@ const TodayMenu = () => {
 
   //ボタンが押された時の関数
   const handleSubmit = (e) => { 
+    handleClick(inputText);
     /*イベントのeでformのたびに際レンダリングされて、
     出力が消えてしまうデフォルトの機能を無効化*/
     e.preventDefault();
     //ボタンが押されたらその時のテキストボックスの中身を表示
     //console.log(inputText);
-
-    /*...は一つ前の状態を指す。つまり前の状態のtasklistに対してinputTextを
-    入れることを指す.状態はどんどん増えていく*/
-    setTaskList([
-      ...taskList, 
-      //handledelteで使うためにidも設定
-      {id: taskList.length,
-        text: inputText}
-    ]);
-
-    console.log(taskList);
-    //ボタンが押されたらテキストボックスの中身を空にする
-    setInputText("");
-
 
   };
 
@@ -74,7 +75,6 @@ const TodayMenu = () => {
     <Navigation />
     <h2>本日のメニューを動的に追加及び削除できるシステム</h2>
     <h2>管理者のみ実行できるようにしたい</h2>
-    <p>{fruits}</p>
 
     
     <div className="input-sweets">
@@ -86,8 +86,6 @@ const TodayMenu = () => {
     </div>  
 
     <SweatsList taskList={taskList} setTaskList={setTaskList}/>
-
-    {/*<button onClick={handleClick}>post</button>*/}
       
     </div>
     

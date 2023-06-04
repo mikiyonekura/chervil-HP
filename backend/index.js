@@ -22,34 +22,34 @@ app.use((req, res, next) => {
   database= [
     {
       id:1,
-      name:"りんご",
-      price:200,
-      image:"https://source.unsplash.com/gDPaDDy6_WE",
+      name:"クッキー",
+      price:"200円",
+      ingre:"小麦粉、バター、砂糖、卵、チョコチップ",
+      image:"../front/src/images/gazo1.jpeg"
     },
     {
       id:2,
-      name:"バナナ",
-      price:300,
-      image:"https://source.unsplash.com/zrF6ACPLhPM",
+      name:"スコーン",
+      price:"300円",
+      ingre:"小麦粉、バター、砂糖、卵",
+      image:"../front/src/images/gazo1.jpeg"
     },
     {
       id:3,
-      name:"みかん",
-      price:"150",
-      image:"https://source.unsplash.com/bogrLtEaJ2Q",
+      name:"マフィン",
+      price:"150円",
+      ingre:"小麦粉、バター、砂糖、卵、ベーキングパウダー",
+      image:"../front/src/images/gazo1.jpeg"
     },
     {
       id:4,
-      name:"メロン",
-      price:"2000",
-      image:"https://source.unsplash.com/8keUtGmy0xo",
+      name:"ビスコッティ",
+      price:"400円",
+      ingre:"小麦粉、バター、砂糖、卵、アーモンド",
+      image:"../front/src/images/gazo1.jpeg"
     },
   ];
 
-
-app.get("/fruits", (req , res) => {
-    res.json(database[0]);
-});
 
 app.get("/api", (req, res) => {
   res.json({ message: "Hello World!" });
@@ -57,17 +57,17 @@ app.get("/api", (req, res) => {
 
 
 // postの処理
-app.post("/img", function (req, res) {
+app.post("/sweats", function (req, res) {
     try {
       console.log("通信きたよー");
-      console.log(req.body)
-      res.json(req.body.nameOfSweets + "の画像を返したいよ")
-      //res.json(database[0])
-      
-      /*res.json(req.body); */ // jsonで返却
+      console.log(req.body.nameOfSweats)
+      const nameOfSweats = req.body.nameOfSweats;
+      //res.json(req.body.nameOfSweets + "の画像を返したいよ")
+      //inputされたおかしの名前に一致するものを返す
+      res.json(database.find((sweats) => sweats.name === nameOfSweats))
   
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   });
 

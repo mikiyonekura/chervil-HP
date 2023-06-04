@@ -19,6 +19,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
   },[])
+  
   return (
     <Router>
     <div className="App">
@@ -31,6 +32,7 @@ function App() {
         <Route path="/Parking" element={<Parking/>}/>
         <Route path="/Galary" element={<Galary/>}/>
         <Route path="/Form" element={<Form/>}/>
+        
       </Routes>
       {/*<p>{message}</p>*/}
       <Footer />
