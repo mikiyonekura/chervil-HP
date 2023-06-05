@@ -25,28 +25,28 @@ app.use((req, res, next) => {
       name:"クッキー",
       price:"200円",
       ingre:"小麦粉、バター、砂糖、卵、チョコチップ",
-      image:"../front/src/images/gazo1.jpeg"
+      image:"/cookie.png"
     },
     {
       id:2,
       name:"スコーン",
       price:"300円",
       ingre:"小麦粉、バター、砂糖、卵",
-      image:"../front/src/images/gazo1.jpeg"
+      image:"/scone.png"
     },
     {
       id:3,
       name:"マフィン",
       price:"150円",
       ingre:"小麦粉、バター、砂糖、卵、ベーキングパウダー",
-      image:"../front/src/images/gazo1.jpeg"
+      image:"/mafin.png"
     },
     {
       id:4,
       name:"ビスコッティ",
       price:"400円",
       ingre:"小麦粉、バター、砂糖、卵、アーモンド",
-      image:"../front/src/images/gazo1.jpeg"
+      image:"/bisco.png"
     },
   ];
 

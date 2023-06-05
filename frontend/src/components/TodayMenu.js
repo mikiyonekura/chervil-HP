@@ -71,21 +71,23 @@ const TodayMenu = () => {
   };
 
   return (
-    <div>
-    <Navigation />
-    <h2>本日のメニューを動的に追加及び削除できるシステム</h2>
-    <h2>管理者のみ実行できるようにしたい</h2>
+    <div className='container'>
+      <Navigation />
+      <h2>本日のメニューを動的に追加及び削除できるシステム</h2>
+      <p>入力例：スコーン、マフィン、ビスコッティ、など</p>
+      {/*<h2>管理者のみ実行できるようにしたい</h2>*/}
 
-    
-    <div className="input-sweets">
-      <form onSubmit={handleSubmit}>
-        {/* valueをinputTextにすることでテキストボックスの中身と連携*/}
-        <input type='text' onChange={handleChange} value={inputText} />
-        <button >追加</button>
-      </form>
-    </div>  
+      
+      <div className="input-sweets">
+        <form onSubmit={handleSubmit}>
+          {/* valueをinputTextにすることでテキストボックスの中身と連携*/}
+          <input type='text' onChange={handleChange} value={inputText} />
+          <button >追加</button>
+        </form>
+      </div>  
 
-    <SweatsList taskList={taskList} setTaskList={setTaskList}/>
+      <SweatsList taskList={taskList} setTaskList={setTaskList}/>
+      
       
     </div>
     

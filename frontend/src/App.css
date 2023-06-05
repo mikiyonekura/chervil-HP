@@ -1,4 +1,6 @@
-@import url("keyframes.css");
+@import url("keyframes.css"); 
+
+
 
 .App {
   text-align: center;
@@ -7,7 +9,7 @@
 }
 
 .container{
-
+  
 }
 
 /*スライドショー-----------------------------------------------------------------*/
@@ -46,6 +48,7 @@ footer ul{
   margin: 10px;
   float: left;
   width: 20%;
+  list-style: none;
 }
 #footermenu {
 	overflow: hidden;
@@ -223,16 +226,17 @@ footer ul{
 	vertical-align: text-top;
 }
 
+
 .sweats-contents {
-  margin: 10px;
-  padding: 0;
-  width: 80%;
+  margin-left: 100px;
+  width: 50%;
   height: auto;
   display: block;
+  
 }
 
 .sweats-container{
-  margin: 10px;
+  margin:  50px;
   padding: 0;
   width: 100%;
   height: 200px;
@@ -246,6 +250,7 @@ footer ul{
 }
 
 .sweats-container img{
+  margin-left: 10px;
   width: 200px;
   height: 200px;
   display: block;
@@ -256,7 +261,7 @@ footer ul{
 .sweats-container .text{
   margin: 15px;
   padding: 0;
-
+  text-align: cnter;
   display: block;
   font-size: 80%;
   font-family: HiraMinProN-W3;

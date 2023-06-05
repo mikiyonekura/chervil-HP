@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import menu from "../images/menu.jpg";
+
+
 import '../App.css';
 
 //TodayMenu.jsからPropsを受け取る
@@ -12,6 +13,8 @@ const SweatsList = ({taskList,setTaskList}) => {
         //filterは条件に一致したものを除外する(task.id !== index)
         setTaskList(taskList.filter((task) => task.id !== index));
     };
+
+    let path = 1
     
   return (
     <div className='sweats-contents'>
@@ -19,12 +22,18 @@ const SweatsList = ({taskList,setTaskList}) => {
         {/* taskListは[{text: aaa},{}..]みたいに入ってるから,mapでかく{}を
         取り出して,その中のtextにアクセス。小要素にキーの設定も必要 */}
         {taskList.map((task , index)=> (
+            
+
             <div className="sweats-container" key={index}>
                 
                 <div className="sweats-img">
                     
                     {/*<img src={task.image} alt="sweats"/> */}
-                    <img src={menu} alt="menu"/>
+                    
+    
+                    <img src={task.image} alt="menu"/>
+
+              
 
                 </div>
                 
