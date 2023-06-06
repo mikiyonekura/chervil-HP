@@ -1,4 +1,5 @@
 import './App.css';
+import "./slide.css"
 import { useState,useEffect } from 'react'
 import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 import './App.css';
@@ -10,6 +11,8 @@ import Parking from "./components/Parking";
 import Galary from "./components/Galary";
 import Form from "./components/Form";
 
+
+
 function App() {
 
   
@@ -19,7 +22,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
   },[])
-  
+
   return (
     <Router>
     <div className="App">

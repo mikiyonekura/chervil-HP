@@ -1,5 +1,7 @@
 import React from 'react'
 import gazo1 from "../images/gazo1.jpeg";
+import gazo2 from "../images/gazo2.jpeg";
+import gazo3 from "../images/gazo3.jpeg";
 import menu from "../images/menu.jpg";
 import parking from "../images/parking1.jpg";
 import view from "../images/view.jpg";
@@ -7,14 +9,19 @@ import insta from "../images/icon_instagram.png"
 import {Link} from "react-router-dom";
 import Navigation from "./Navigation";
 
+
 const HomePage = () => {
   return (
  
     <div className="container">
         <div className="slide">
             <aside id="mainimg">
-                <img src={gazo1} alt='gazo1' />
+                <img src={gazo1} alt="aa" className='slide1'/>
+                <img src={gazo2} alt="aaa" className='slide2'/>
+                <img src={gazo3} alt="aaaa" className='slide0'/>
+
             </aside>
+            {/*<!--スライドショー-->*/}
         </div>
         <Navigation />
 
