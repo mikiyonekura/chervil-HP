@@ -14,35 +14,34 @@ import Form from "./components/Form";
 
 
 function App() {
-
-  
   const [message, setMessage] = useState('');
-  useEffect(() =>{
+  
+  useEffect(() => {
     fetch('/api')
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
-  },[])
+  }, [])
 
   return (
     <Router>
-    <div className="App">
-      <Header />
-      
-      
-      <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/TodayMenu" element={<TodayMenu/>}/>
-        <Route path="/Parking" element={<Parking/>}/>
-        <Route path="/Galary" element={<Galary/>}/>
-        <Route path="/Form" element={<Form/>}/>
-        
-      </Routes>
-      {/*<p>{message}</p>*/}
-      <Footer />
-  
-    </div>
-  </Router>
+      <div className="App">
+        {/*<Header />*/}
+        <div className="Routes">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/TodayMenu" element={<TodayMenu />} />
+            <Route path="/Parking" element={<Parking />} />
+            <Route path="/Galary" element={<Galary />} />
+            <Route path="/Form" element={<Form />} />
+          </Routes>
+        </div>
+        {/*<p>{message}</p>*/}
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
+
