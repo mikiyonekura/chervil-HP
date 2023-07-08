@@ -2,6 +2,13 @@ import React from 'react'
 import Navigation from "./Navigation";
 import { useState,useEffect } from 'react'
 import SweatsList from './SweatsList';
+import BodyCard from './BodyCard';
+import Content from './Content';
+import Content2 from './Content2';
+import { Grid } from '@material-ui/core';
+import { TextField, Button } from '@material-ui/core';
+import SendIcon from '@material-ui/icons/Send';
+
 
 
 
@@ -9,42 +16,43 @@ const TodayMenu = () => {
 
   //非同期でpostボタンが押されるたびにpost通信を行う
   const handleClick = async (inputText) => {
-    await fetch("/sweats", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ nameOfSweats: inputText}),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-
-        const image = data.image;
-        const price = data.price;
-        const ingre = data.ingre;
-
-        /*...は一つ前の状態を指す。つまり前の状態のtasklistに対してinputTextを
-        入れることを指す.状態はどんどん増えていく*/
-        setTaskList([
-          ...taskList, 
-          //handledelteで使うためにidも設定
-          {id: taskList.length,
-          text: inputText,
-          image: image,
-          ingre: ingre,
-          price: price,
-
-          }
-        ]);
-
-        console.log(taskList);
-        //ボタンが押されたらテキストボックスの中身を空にする
-        setInputText("");
-
+    try {
+      const response = await fetch("/sweats", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ nameOfSweats: inputText}),
       });
+  
+      if (!response.ok) {
+        throw new Error('HTTP error ' + response.status);
+      }
+  
+      const data = await response.json();
+      const image = data.image;
+      const price = data.price;
+      const ingre = data.ingre;
+  
+      setTaskList([
+        ...taskList, 
+        {id: taskList.length,
+        text: inputText,
+        image: image,
+        ingre: ingre,
+        price: price,
+        }
+      ]);
+    } catch (error) {
+      console.error('Fetch failed:', error);
+    }
 
+    console.log(taskList);
+    //ボタンが押されたらテキストボックスの中身を空にする
+    setInputText("");
   };
+  
   
   
   //tasklistっていう配列を作って、setTaskListで更新していく
@@ -73,20 +81,51 @@ const TodayMenu = () => {
   return (
     <div className='container'>
       <Navigation />
-      <h2>本日のメニューを動的に追加及び削除できるシステム</h2>
-      <p>入力例：スコーン、マフィン、ビスコッティ、など</p>
       {/*<h2>管理者のみ実行できるようにしたい</h2>*/}
-
       
+      {/*
+
       <div className="input-sweets">
         <form onSubmit={handleSubmit}>
-          {/* valueをinputTextにすることでテキストボックスの中身と連携*/}
+          
           <input type='text' onChange={handleChange} value={inputText} />
           <button >追加</button>
         </form>
       </div>  
 
-      <SweatsList taskList={taskList} setTaskList={setTaskList}/>
+      */}
+
+      {/*<SweatsList taskList={taskList} setTaskList={setTaskList}/>*/}
+
+      <Grid container direction="column">
+        <Grid item>
+          
+          <form onSubmit={handleSubmit}>
+            <TextField 
+              style={{ height: "80px" }}
+              label="お菓子の名前"
+              variant="outlined"
+              value={inputText}
+              onChange={handleChange}
+           
+            />
+            <Button variant="contained" style={{ height: "53px" }} endIcon={<SendIcon />}>
+              登録
+            </Button>
+          </form>
+
+        </Grid>
+
+        <Grid item container>
+          <Grid item sm={2} />
+          <Grid item xs={12} sm={8}>
+          <Content2 taskList={taskList}/>
+
+          </Grid>
+          <Grid item sm={2} />
+        </Grid>
+      </Grid>
+      
       
       
     </div>

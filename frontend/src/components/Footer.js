@@ -9,7 +9,7 @@ const Footer = () => {
         <ul>
 
         <li><Link to = "/" >HOME</Link></li>
-  
+
         </ul>
         <ul>
 

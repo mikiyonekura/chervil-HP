@@ -72,7 +72,7 @@ const HomePage = () => {
             <section id="new">
 
                 <h2>News<span>お知らせ</span></h2>
-                <dl>
+                <dl style={{textAlign: "left"}}>
                 <dt>2023/04/07</dt>
                 <dd>アトリエchervil cojuのホームページを作成しました。イベントの情報などを発信していきます。<span className="newicon">NEW</span></dd>
                 <dt>2023/03/22</dt>
