@@ -10,6 +10,7 @@ import TodayMenu from "./components/TodayMenu";
 import Parking from "./components/Parking";
 import Galary from "./components/Galary";
 import Form from "./components/Form";
+import Login from './components/Login';
 
 
 
@@ -33,6 +34,7 @@ function App() {
             <Route path="/Parking" element={<Parking />} />
             <Route path="/Galary" element={<Galary />} />
             <Route path="/Form" element={<Form />} />
+            <Route path="/Login" element={<Login />} />
           </Routes>
         </div>
         {/*<p>{message}</p>*/}

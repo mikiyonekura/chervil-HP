@@ -3,11 +3,16 @@ import Navigation from "./Navigation";
 
 import { Grid } from '@material-ui/core';
 import Content from './Content';
+import Login from './Login';
 
 
 const Galary = () => {
   return (
     <div>
+
+      <Navigation />
+
+      <Login />
         <Grid container direction="column">
         <Grid item>
           カードを表示してみる
