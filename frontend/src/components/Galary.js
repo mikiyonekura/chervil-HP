@@ -13,7 +13,9 @@ const Galary = () => {
       <Navigation />
 
       <Login />
-        <Grid container direction="column">
+
+      {/*
+      <Grid container direction="column">
         <Grid item>
           カードを表示してみる
         </Grid>
@@ -26,6 +28,7 @@ const Galary = () => {
           <Grid sm={2} />
         </Grid>
       </Grid>
+      */}
     </div>
 
     

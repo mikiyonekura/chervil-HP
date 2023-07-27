@@ -8,6 +8,7 @@ app.use(express.static(path.join(__dirname, '../frontend/build')));
 // jsonの受け取り
 app.use(express.json());
 
+
 // cors対策
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000/TodayMenu");

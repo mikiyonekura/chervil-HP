@@ -12,32 +12,54 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import createMixins from '@mui/material/styles/createMixins';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
+/*
+const sendTest = () => {
+    fetch('http://localhost:4000/auth/register', {method: 'POST', credentials: 'include',})
+    .then(response => response.json())
+    .then(data => console.log(data));
+}; */
+
+
+const sendToBack = async (loginData) => {
+    const response = await fetch('http://localhost:4000/auth/register', {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData),
+    });
+    const data = await response.json();
+    console.log(data);
+
+} 
+
+
 export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    const loginData = {
+        email: data.get('email'),
+        password: data.get('password'),
+      }
+
     console.log({
       email: data.get('email'),
       password: data.get('password'),
     });
+
+    //sendTest();
+    sendToBack(loginData);
+    
+
   };
 
   return (
@@ -105,7 +127,7 @@ export default function Login() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+    
       </Container>
     </ThemeProvider>
   );
