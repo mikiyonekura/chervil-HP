@@ -3,12 +3,19 @@ import Navigation from "./Navigation";
 
 import { Grid } from '@material-ui/core';
 import Content from './Content';
+import Login from './Login';
 
 
-const Galary = () => {
+const Signin = () => {
   return (
     <div>
-        <Grid container direction="column">
+
+      <Navigation />
+
+      <Login />
+
+      {/*
+      <Grid container direction="column">
         <Grid item>
           カードを表示してみる
         </Grid>
@@ -21,10 +28,11 @@ const Galary = () => {
           <Grid sm={2} />
         </Grid>
       </Grid>
+      */}
     </div>
 
     
   )
 }
 
-export default Galary
+export default Signin

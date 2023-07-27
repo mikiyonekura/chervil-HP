@@ -15,7 +15,7 @@
 }
 
 .container{
-  
+  margin: 0px 0px 0px 60px;
 }
 
 /*スライドショー-----------------------------------------------------------------*/
@@ -49,17 +49,20 @@ footer {
 	font-size: 80%;	/*文字サイズ*/
 	background: #4b4a4a;	/*背景色*/
 	color: #ccc;		/*文字色*/
+	
   
 }
 footer a {color: #ccc;}
 footer a:hover {color: #fff;}
 footer ul{
+  
   margin: 10px;
   float: left;
   width: 25%;
   list-style: none;
 }
 #footermenu {
+	margin-left: 150px;
 	overflow: hidden;
 	padding: 30px 0;	/*上下、左右へのボックス内の余白*/
 	
@@ -109,7 +112,7 @@ footer ul{
 	flex-direction: column;			/*中のブロックを並べる向きの指定。これは縦に並べる意味。*/
 	width: 32%;						/*ブロック幅*/
 	margin-bottom: 20px;			/*ブロックの下に空ける余白*/
-	background: #402e1c;				/*背景色*/
+	background: #585756;				/*背景色*/
 	color: #fff;					/*文字色*/
 	border-radius: 5px;				/*角丸の指定。ほんの少し角が丸くなります。*/
 	overflow: hidden;				/*角丸から内容が飛び出ないよう、飛び出た部分を非表示にする指定*/
@@ -148,7 +151,7 @@ footer ul{
 .btn1 a {
 	display: block;
 	line-height: 30px;
-	height: 30px;
+	height: 50px;
 	text-decoration: none;
 	border-top: 1px solid #fff;		/*枠線の幅、線種、色*/
 	text-align: center;			/*テキストをセンタリング*/

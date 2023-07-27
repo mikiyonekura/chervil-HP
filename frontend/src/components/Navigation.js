@@ -8,7 +8,7 @@ const Navigation = () => {
     <nav id="menubar">
     <ul>
     <li><Link to="/">HOME<span>ホーム</span></Link></li>
-    <li><Link to="/Galary">GALLARY<span>ギャラリー</span></Link></li>
+    <li><Link to="/Signin">SIGN UP<span>サインアップ</span></Link></li>
     <li><Link to="http://chervil.php.xdomain.jp/form.php">CONTACT<span>お問い合わせ</span></Link></li>
   
     </ul>

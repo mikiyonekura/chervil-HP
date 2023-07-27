@@ -8,6 +8,7 @@ import view from "../images/view.jpg";
 import insta from "../images/icon_instagram.png"
 import {Link} from "react-router-dom";
 import Navigation from "./Navigation";
+import Header from "./Header";
 
 
 const HomePage = () => {
@@ -24,6 +25,8 @@ const HomePage = () => {
             {/*<!--スライドショー-->*/}
         </div>
         <Navigation />
+        <Header />
+        
 
             <div id="contents">
         

@@ -13,7 +13,7 @@ const Footer = () => {
         </ul>
         <ul>
 
-        <li><Link to ="/galary" >GALLARY</Link></li>
+        <li><Link to ="/Signin" >SIGN UP</Link></li>
 
         </ul>
         <ul>
