@@ -6,7 +6,7 @@ import Content from './Content';
 import Login from './Login';
 
 
-const Galary = () => {
+const Signin = () => {
   return (
     <div>
 
@@ -35,4 +35,4 @@ const Galary = () => {
   )
 }
 
-export default Galary
+export default Signin
