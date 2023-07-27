@@ -8,6 +8,7 @@ import Content2 from './Content2';
 import { Grid } from '@material-ui/core';
 import { TextField, Button } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
+import Header from './Header';
 
 
 
@@ -79,8 +80,12 @@ const TodayMenu = () => {
   };
 
   return (
+    
     <div className='container'>
+      <div id ="contents">
+      <Header />
       <Navigation />
+      
       {/*<h2>管理者のみ実行できるようにしたい</h2>*/}
       
       {/*
@@ -97,6 +102,7 @@ const TodayMenu = () => {
 
       {/*<SweatsList taskList={taskList} setTaskList={setTaskList}/>*/}
 
+    <div className="input-sweets">
       <Grid container direction="column">
         <Grid item>
           
@@ -127,7 +133,8 @@ const TodayMenu = () => {
       </Grid>
       
       
-      
+      </div>
+    </div>
     </div>
     
   )
