@@ -28,8 +28,10 @@ const useStyles = makeStyles({
 });
 
 
+
 function BodyCard2(props) {
-    const { avatarUrl, text, image, ingre, price } = props;
+    const { id, text, image, ingre, price, onDelete } = props;
+
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
     return (
@@ -43,7 +45,6 @@ function BodyCard2(props) {
                 }
 
                 title={text}
-
                 
             />
             <CardMedia style={{ height: "200px" }} image={image} />
@@ -53,6 +54,8 @@ function BodyCard2(props) {
             </Typography>
             </CardContent>
             <CardActions>
+            
+            <Button onClick={() =>onDelete(id)}>削除</Button>
             <Button size="small">詳細をみる</Button>
             </CardActions>
         </Card>
