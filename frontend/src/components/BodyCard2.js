@@ -35,7 +35,7 @@ function BodyCard2(props) {
     return (
         <Card variant="outlined">
             <CardHeader
-                style={{ height: "30px" }} 
+                style={{ height: "80px" }} 
                 action={
                 <IconButton aria-label="settings">
                     <StarBorderOutlinedIcon />

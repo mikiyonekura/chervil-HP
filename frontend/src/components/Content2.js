@@ -1,38 +1,10 @@
 import { Grid } from '@material-ui/core'
 import React from 'react'
-import BodyCard from './BodyCard'
+
 import BodyCard2 from './BodyCard2'
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 
-
-
-const cardContents = [
-    {
-        title: "タイトル1",
-        subheader: "サブヘッダー1",
-        avatarUrl: "https://joeschmoe.io/api/v1/random",
-        imageUrl: "https://picsum.photos/150"
-    },
-    {
-        title: "タイトル2",
-        subheader: "サブヘッダー2",
-        avatarUrl: "https://joeschmoe.io/api/v1/random",
-        imageUrl: "https://picsum.photos/150"
-    },
-    {
-        title: "タイトル3",
-        subheader: "サブヘッダー3",
-        avatarUrl: "https://joeschmoe.io/api/v1/random",
-        imageUrl: "https://picsum.photos/150"
-    },
-    {
-        title: "タイトル4",
-        subheader: "サブヘッダー4",
-        avatarUrl: "https://joeschmoe.io/api/v1/random",
-        imageUrl: "https://picsum.photos/150"
-    },
-]
 
 const cardContents2 =[         
     {

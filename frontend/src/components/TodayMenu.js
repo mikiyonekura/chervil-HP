@@ -2,8 +2,7 @@ import React from 'react'
 import Navigation from "./Navigation";
 import { useState,useEffect } from 'react'
 import SweatsList from './SweatsList';
-import BodyCard from './BodyCard';
-import Content from './Content';
+
 import Content2 from './Content2';
 import { Grid } from '@material-ui/core';
 import { TextField, Button } from '@material-ui/core';

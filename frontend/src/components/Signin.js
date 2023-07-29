@@ -2,7 +2,7 @@ import React from 'react'
 import Navigation from "./Navigation";
 
 import { Grid } from '@material-ui/core';
-import Content from './Content';
+
 import Login from './Login';
 import Header from './Header';
 

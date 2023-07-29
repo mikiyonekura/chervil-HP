@@ -6,8 +6,8 @@
 	text-align: center;
 	flex-direction: column;
 	min-height: 100vh;
-	font-family: 'M PLUS Rounded 1c', sans-serif;
-	
+	font-family: 'Itim', cursive;
+		
   }
   
 .App > .Routes {
@@ -46,7 +46,7 @@
 
 
 footer {
-
+	
 	font-size: 80%;	/*文字サイズ*/
 	background: #4b4a4a;	/*背景色*/
 	color: #ccc;		/*文字色*/
@@ -98,6 +98,12 @@ footer ul{
 	color: #999;		/*文字色*/
 }
 
+/*h4タグ内のspanタグ（装飾文字）*/
+#contents h4 span {
+	display: block;
+	font-size: 30%;	/*文字サイズ*/
+	color: #999;		/*文字色*/
+}
 /*list-column（トップページで使っている３列ブロック）
 ---------------------------------------------------------------------------*/
 /*カラムブロック全体を囲むボックス*/
@@ -113,7 +119,7 @@ footer ul{
 	flex-direction: column;			/*中のブロックを並べる向きの指定。これは縦に並べる意味。*/
 	width: 32%;						/*ブロック幅*/
 	margin-bottom: 20px;			/*ブロックの下に空ける余白*/
-	background: #22221f;				/*背景色*/
+	background: #191916;				/*背景色*/
 	color: #fff;					/*文字色*/
 	border-radius: 5px;				/*角丸の指定。ほんの少し角が丸くなります。*/
 	overflow: hidden;				/*角丸から内容が飛び出ないよう、飛び出た部分を非表示にする指定*/
@@ -131,7 +137,10 @@ footer ul{
 /*ボックス内のp（段落）タグ*/
 #contents .list-column p {
 	padding: 0;		/*余白のリセット*/
+	/*左よせにする*/
+	text-align: left;
 	font-size: 80%;
+	
 }
 
 /*「class="text"」を指定したブロック。テキストブロック。*/
@@ -215,6 +224,7 @@ footer ul{
 /*news-----------------------------------------------------*/
 /*見出しを含まないお知らせブロック*/
 #new dl {
+	margin-left: 50px;	/*左の余白*/
 	padding: 0px 20px;		/*上下、左右へのブロック内の余白*/
 }
 /*日付設定*/
