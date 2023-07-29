@@ -82,7 +82,7 @@ const TodayMenu = () => {
     
     <div className='container'>
       <div id ="contents">
-      <Header />
+
       <Navigation />
       
       {/*<h2>管理者のみ実行できるようにしたい</h2>*/}

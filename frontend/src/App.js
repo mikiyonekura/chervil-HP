@@ -11,6 +11,7 @@ import Parking from "./components/Parking";
 import Signin from "./components/Signin";
 import Form from "./components/Form";
 import Login from './components/Login';
+import SignUp from './components/Singup';
 
 
 
@@ -27,13 +28,14 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/*<Header />*/}
+        <Header />
         <div className="Routes">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/TodayMenu" element={<TodayMenu />} />
             <Route path="/Parking" element={<Parking />} />
             <Route path="/Signin" element={<Signin />} />
+            <Route path="Signup" element={<SignUp />} />
             <Route path="/Form" element={<Form />} />
             <Route path="/Login" element={<Login />} />
           </Routes>

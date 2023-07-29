@@ -28,7 +28,7 @@ const sendTest = () => {
 
 
 const sendToBack = async (loginData) => {
-    const response = await fetch('http://localhost:4000/auth/register', {
+    const response = await fetch('http://localhost:4000/auth/login', {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -120,7 +120,7 @@ export default function Login() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/Signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

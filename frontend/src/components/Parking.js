@@ -6,7 +6,7 @@ const Parking = () => {
   return (
     <div className="container">
       <div id="contents">
-        <Header />
+
         <Navigation />
 
           <div className="parking">

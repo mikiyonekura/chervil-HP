@@ -11,7 +11,6 @@ const Signin = () => {
   return (
     <div className="container">
       
-      <Header />
       
       <Navigation />
 
