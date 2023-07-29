@@ -12,18 +12,11 @@ import Signin from "./components/Signin";
 import Form from "./components/Form";
 import Login from './components/Login';
 import SignUp from './components/Singup';
+import TodayMenuAd from './components/TodayMenuAd';
 
 
 
 function App() {
-  const [message, setMessage] = useState('');
-  
-  /*
-  useEffect(() => {
-    fetch('/api')
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  }, []) */
 
   return (
     <Router>
@@ -33,6 +26,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/TodayMenu" element={<TodayMenu />} />
+            <Route path="/TodayMenuAd" element={<TodayMenuAd />} />
             <Route path="/Parking" element={<Parking />} />
             <Route path="/Signin" element={<Signin />} />
             <Route path="Signup" element={<SignUp />} />
@@ -40,7 +34,7 @@ function App() {
             <Route path="/Login" element={<Login />} />
           </Routes>
         </div>
-        {/*<p>{message}</p>*/}
+  
         <Footer />
       </div>
     </Router>
