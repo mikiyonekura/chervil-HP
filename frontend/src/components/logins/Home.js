@@ -4,6 +4,8 @@ import { auth, provider } from './firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import TodayMenu from '../TodayMenu'
 import TodayMenuAd from '../TodayMenuAd'
+import Button from '@mui/material/Button';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 
 
@@ -45,9 +47,9 @@ function SignInButton() {
     };
 
     return(
-        <button onClick = {signInWithGoogle}> 
-            <p>Sign in with Google</p>
-        </ button>
+        <Button  onClick = {signInWithGoogle} variant="contained" style={{ height: "40px" }} endIcon={<AdminPanelSettingsIcon />}>
+            login or 管理者画面
+        </Button>
     )
 }
 
