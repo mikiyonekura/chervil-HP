@@ -13,6 +13,7 @@ import Form from "./components/Form";
 import Login from './components/Login';
 import SignUp from './components/Singup';
 import TodayMenuAd from './components/TodayMenuAd';
+import TodayMenuFirebase from './components/TodayMenuFirebase';
 
 
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/TodayMenu" element={<TodayMenu />} />
             <Route path="/TodayMenuAd" element={<TodayMenuAd />} />
+            <Route path="/TodayMenuFirebase" element={<TodayMenuFirebase />} />
             <Route path="/Parking" element={<Parking />} />
             <Route path="/Signin" element={<Signin />} />
             <Route path="Signup" element={<SignUp />} />
