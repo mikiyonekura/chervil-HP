@@ -6,6 +6,7 @@ import TodayMenu from '../TodayMenu'
 import TodayMenuAd from '../TodayMenuAd'
 import Button from '@mui/material/Button';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import Db from './Db'
 
 
 
@@ -18,6 +19,7 @@ const [user] = useAuthState(auth)
     {user && user.email === "purplepiku4040@gmail.com" ? (
         <div>
             <TodayMenuAd />
+            <Db />
             <UserInfo/>
             <SignOutButton />
         </div>
@@ -25,6 +27,7 @@ const [user] = useAuthState(auth)
     ) : user ? (
         <div>
             <TodayMenu />
+            <Db />
             <UserInfo/>
             <SignOutButton />
         </div>

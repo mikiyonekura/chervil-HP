@@ -10,6 +10,9 @@ import SendIcon from '@material-ui/icons/Send';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import Header from './Header';
 import { Link } from 'react-router-dom';
+import { db } from './logins/firebase';
+import {collection, addDoc} from 'firebase/firestore';
+
 
 
 
@@ -46,9 +49,24 @@ const TodayMenuAd = () => {
         price: price,
         }
       ]);
+
+      //taskListをfirebaseのデータベースに保存する
+      addDoc(collection(db, "posts"), {
+        id: taskList.length,
+        text: inputText,
+        image: image,
+        ingre: ingre,
+        price: price,
+      });
+
     } catch (error) {
       console.error('Fetch failed:', error);
     }
+
+
+
+
+
 
     console.log(taskList);
     //ボタンが押されたらテキストボックスの中身を空にする
@@ -87,7 +105,7 @@ const TodayMenuAd = () => {
 
       <Navigation />
       
-      {/*<h2>管理者のみ実行できるようにしたい</h2>*/}
+      <h2>管理者モード</h2>
 
     
 
@@ -129,7 +147,7 @@ const TodayMenuAd = () => {
         <Grid item container>
           <Grid item sm={2} />
           <Grid item xs={12} sm={8}>
-          <Content2 taskList={taskList} setTaskList={setTaskList} />
+          {/* <Content2 taskList={taskList} setTaskList={setTaskList} /> */}
 
           </Grid>
           <Grid item sm={2} />

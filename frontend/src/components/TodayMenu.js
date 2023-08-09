@@ -29,7 +29,7 @@ const TodayMenu = () => {
 
       <Navigation />
       
-      {/*<h2>管理者のみ実行できるようにしたい</h2>*/}
+      <h2>ユーザモード</h2>
 
     <div className="input-sweets">
 
