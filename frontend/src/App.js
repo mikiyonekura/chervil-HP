@@ -12,6 +12,7 @@ import Form from "./components/trash/Form";
 import Login from './components/signin/Login';
 import SignUp from './components/signin/Singup';
 import TodayMenuFirebase from './components/todaymenu/TodayMenuFirebase';
+import Sat from './components/Sat';
 
 
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/Signin" element={<Signin />} />
             <Route path="Signup" element={<SignUp />} />
             <Route path="/Form" element={<Form />} />
+            <Route path="/Sat" element={<Sat />} />
             <Route path="/Login" element={<Login />} />
           </Routes>
         </div>

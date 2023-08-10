@@ -17,6 +17,11 @@ const Footer = () => {
 
         </ul>
         <ul>
+
+        <li><Link to ="/Sat" >SAT</Link></li>
+
+        </ul>
+        <ul>
   
         <li><Link to ="http://chervil.php.xdomain.jp/form.php" >CONTACT</Link></li>
       
