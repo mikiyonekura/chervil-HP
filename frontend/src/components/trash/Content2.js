@@ -6,35 +6,6 @@ import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 
 
-// const cardContents2 =[         
-//     {
-
-//         text: "クッキー",
-//         image: "/cookie.png",
-//         ingre: "aaaa",
-//         price: "3000",
-
-//     },
-//     {
-
-//         text: "クッキー",
-//         image: "/cookie.png",
-//         ingre: "aaaa",
-//         price: "3000",
-
-//     },
-
-//     {
-    
-//         text: "3hahahahaha",
-//         image: "/cookie.png",
-//         ingre: "aaaa",
-//         price: "3000",
-
-//     }
-// ]
-
-
 function Content2(props) {
     const { taskList, setTaskList} = props;
     console.log(taskList);
@@ -44,7 +15,7 @@ function Content2(props) {
         setTaskList(updatedTaskList);
     };
 
-    const getCardContent2 = (getObj, index) => {
+    const getCardContent = (getObj, index) => {
         return (
             <Grid item xs={12} sm={4} key={index}>
                 <BodyCard2 {...getObj} onDelete={handleDelete} />
@@ -53,7 +24,7 @@ function Content2(props) {
     };
     return (
         <Grid container spacing={2}>
-            {taskList.map(contentObj => getCardContent2(contentObj,uuidv4()))}
+            {taskList.map(contentObj => getCardContent(contentObj,uuidv4()))}
         </Grid>
     )
 }

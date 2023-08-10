@@ -1,10 +1,10 @@
 import React from 'react'
-import Navigation from "./Navigation";
+import Navigation from "../parts/Navigation";
 
 import { Grid } from '@material-ui/core';
 
 import Login from './Login';
-import Header from './Header';
+import Header from '../parts/Header';
 
 
 const Signin = () => {

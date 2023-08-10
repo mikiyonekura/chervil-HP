@@ -19,6 +19,10 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
+import { auth } from '../firebase/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
+
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -98,6 +102,10 @@ export default function Header() {
     setOpen(false);
   };
 
+
+
+  const [user] = useAuthState(auth)
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -118,6 +126,12 @@ export default function Header() {
           <Typography variant="h6" noWrap component="div">
             atelier chervilcoju
           </Typography>
+            {/* <div>
+              <h2>ユーザー名：{user.displayName}</h2>
+              <h2>メールアドレス：{user.email}</h2>
+              <img src={auth.currentUser.photoURL} alt="user photo" />
+            </div> */}
+          
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>

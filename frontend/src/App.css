@@ -15,7 +15,7 @@
 }
 
 .container{
-  margin: 64px 0px 0px 60px;
+  margin: 84px 0px 0px 60px;
 }
 
 /*スライドショー-----------------------------------------------------------------*/
@@ -40,6 +40,21 @@
   margin: 0;
   width: 350px;
 }
+
+/*userInfo--------------------------------------------------------------------------*/
+.userInfo{
+	margin: 30px 30px 30px 30px;
+	display: block;
+	font-size: small;
+}
+
+.userInfo img{
+	width: 30px;
+  	height: 30px;
+  	border-radius: 50%;
+  	margin: 0 10px;
+}
+
 
 
 /*footer--------------------------------------------------------------------*/

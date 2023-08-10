@@ -4,15 +4,14 @@ import { useState,useEffect } from 'react'
 import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 import './App.css';
 import HomePage from './components/HomePage';
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import TodayMenu from "./components/TodayMenu";
+import Footer from "./components/parts/Footer";
+import Header from "./components/parts/Header";
 import Parking from "./components/Parking";
-import Signin from "./components/Signin";
-import Form from "./components/Form";
-import Login from './components/Login';
-import SignUp from './components/Singup';
-import TodayMenuAd from './components/TodayMenuAd';
+import Signin from "./components/signin/Signin";
+import Form from "./components/trash/Form";
+import Login from './components/signin/Login';
+import SignUp from './components/signin/Singup';
+import TodayMenuFirebase from './components/todaymenu/TodayMenuFirebase';
 
 
 
@@ -25,8 +24,8 @@ function App() {
         <div className="Routes">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/TodayMenu" element={<TodayMenu />} />
-            <Route path="/TodayMenuAd" element={<TodayMenuAd />} />
+
+            <Route path="/TodayMenuFirebase" element={<TodayMenuFirebase />} />
             <Route path="/Parking" element={<Parking />} />
             <Route path="/Signin" element={<Signin />} />
             <Route path="Signup" element={<SignUp />} />

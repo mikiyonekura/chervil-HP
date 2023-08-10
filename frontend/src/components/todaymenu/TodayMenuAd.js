@@ -1,15 +1,19 @@
 import React from 'react'
-import Navigation from "./Navigation";
+import Navigation from "../parts/Navigation";
 import { useState,useEffect } from 'react'
-import SweatsList from './SweatsList';
+import SweatsList from '../trash/SweatsList';
 
-import Content2 from './Content2';
+import Content2 from '../trash/Content2';
 import { Grid } from '@material-ui/core';
 import { TextField, Button } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import Header from './Header';
+import Header from '../parts/Header';
 import { Link } from 'react-router-dom';
+import { db } from '../firebase/firebase';
+import {collection, addDoc} from 'firebase/firestore';
+import Db from '../firebase/Db';
+
 
 
 
@@ -46,9 +50,24 @@ const TodayMenuAd = () => {
         price: price,
         }
       ]);
+
+      //taskListをfirebaseのデータベースに保存する
+      addDoc(collection(db, "posts"), {
+        id: taskList.length,
+        text: inputText,
+        image: image,
+        ingre: ingre,
+        price: price,
+      });
+
     } catch (error) {
       console.error('Fetch failed:', error);
     }
+
+
+
+
+
 
     console.log(taskList);
     //ボタンが押されたらテキストボックスの中身を空にする
@@ -83,15 +102,16 @@ const TodayMenuAd = () => {
   return (
     
     <div className='container'>
+      <Navigation />
       <div id ="contents">
 
-      <Navigation />
       
-      {/*<h2>管理者のみ実行できるようにしたい</h2>*/}
+      
+      <h2>管理者モード</h2>
 
     
 
-{/*       
+      {/*       
 
       <div className="input-sweets">
         <form onSubmit={handleSubmit}>
@@ -129,7 +149,8 @@ const TodayMenuAd = () => {
         <Grid item container>
           <Grid item sm={2} />
           <Grid item xs={12} sm={8}>
-          <Content2 taskList={taskList} setTaskList={setTaskList} />
+          {/* <Content2 taskList={taskList} setTaskList={setTaskList} /> */}
+            <Db />
 
           </Grid>
           <Grid item sm={2} />
