@@ -7,8 +7,8 @@ import parking from "../images/parking1.jpg";
 import view from "../images/view.jpg";
 import insta from "../images/icon_instagram.png"
 import {Link} from "react-router-dom";
-import Navigation from "./Navigation";
-import Header from "./Header";
+import Navigation from "./parts/Navigation";
+import Header from "./parts/Header";
 
 
 const HomePage = () => {
@@ -25,8 +25,6 @@ const HomePage = () => {
             {/*<!--スライドショー-->*/}
         </div>
         <Navigation />
-        <Header />
-        
 
             <div id="contents">
         
@@ -42,7 +40,7 @@ const HomePage = () => {
                         <h4>Today's menu<span>本日のメニュー</span></h4>
                         <p>人気な商品は売り切れる可能性がございます。ご承知の程お願いします。</p>
                         </div>
-                        <p className="btn1"><Link to ="/TodayMenu" >もっと見る</Link></p>
+                        <p className="btn1"><Link to ="/TodayMenuFirebase" >もっと見る</Link></p>
                     </div>
 
                     <div className="list-column">

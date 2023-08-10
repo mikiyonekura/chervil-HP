@@ -43,11 +43,18 @@
 
 /*userInfo--------------------------------------------------------------------------*/
 .userInfo{
-	margin-left: 70px;
-	height: 50px;
-	display: flex;
+	margin: 30px 30px 30px 30px;
+	display: block;
 	font-size: small;
 }
+
+.userInfo img{
+	width: 30px;
+  	height: 30px;
+  	border-radius: 50%;
+  	margin: 0 10px;
+}
+
 
 
 /*footer--------------------------------------------------------------------*/

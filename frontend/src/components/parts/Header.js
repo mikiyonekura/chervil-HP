@@ -19,7 +19,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
-import { auth } from './logins/firebase'
+import { auth } from '../firebase/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
 

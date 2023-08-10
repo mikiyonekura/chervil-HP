@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import HomePage from './HomePage';
+import HomePage from '../HomePage';
 
 const Footer = () => {
   return (

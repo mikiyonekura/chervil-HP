@@ -1,12 +1,12 @@
 import React from 'react'
-import Home from './logins/Home'
-import Db from './logins/Db'
+import Home from '../firebase/Home'
+import Db from '../firebase/Db'
 
 const TodayMenuFirebase = () => {
   return (
-    <div className='container'>
+  
          <Home />        
-    </div>
+
   )
 }
 

@@ -3,8 +3,8 @@ import {db} from './firebase';
 import { useEffect, useState } from 'react';
 import {collection, getDocs} from 'firebase/firestore';
 import { onSnapshot } from 'firebase/firestore';
-import BodyCard3 from '../BodyCard3';
-import Content3 from '../Content3';
+import BodyCard3 from '../todaymenu/BodyCard';
+import Content3 from '../todaymenu/Content';
 
 
 function Db() {
@@ -37,10 +37,10 @@ function Db() {
   }, []);
 
   return (
-    <div className="App">
+  
     <Content3 posts={posts} />
 
-    </div>
+
   );
 }
 

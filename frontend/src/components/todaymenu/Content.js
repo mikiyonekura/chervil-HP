@@ -1,10 +1,10 @@
 import { Grid } from '@material-ui/core'
 import React from 'react'
 
-import BodyCard2 from './BodyCard2'
+import BodyCard2 from '../trash/BodyCard2'
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
-import BodyCard3 from './BodyCard3';
+import BodyCard3 from './BodyCard';
 
 
 function Content3(props) {
