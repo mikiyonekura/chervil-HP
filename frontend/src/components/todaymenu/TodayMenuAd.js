@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import { db } from '../firebase/firebase';
 import {collection, addDoc} from 'firebase/firestore';
 import Db from '../firebase/Db';
+import { doc, setDoc } from "firebase/firestore";
 
 
 
@@ -51,21 +52,21 @@ const TodayMenuAd = () => {
         }
       ]);
 
-      //taskListをfirebaseのデータベースに保存する
-      addDoc(collection(db, "posts"), {
-        id: taskList.length,
-        text: inputText,
-        image: image,
-        ingre: ingre,
-        price: price,
+
+      const docKey = String(taskList.length);  // キーとして使うIDを文字列に変換
+      const docRef = doc(db, 'posts', docKey); // 'posts' コレクション内の指定したキーのドキュメント参照を作成
+  
+      await setDoc(docRef, {
+          id: taskList.length,
+          text: inputText,
+          image: image,
+          ingre: ingre,
+          price: price,
       });
 
     } catch (error) {
-      console.error('Fetch failed:', error);
+      console.log(error);
     }
-
-
-
 
 
 
@@ -150,7 +151,7 @@ const TodayMenuAd = () => {
           <Grid item sm={2} />
           <Grid item xs={12} sm={8}>
           {/* <Content2 taskList={taskList} setTaskList={setTaskList} /> */}
-            <Db />
+            <Db mode='admin'/>
 
           </Grid>
           <Grid item sm={2} />

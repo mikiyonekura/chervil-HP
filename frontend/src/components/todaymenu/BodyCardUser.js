@@ -54,8 +54,6 @@ function BodyCard3(props) {
             </Typography>
             </CardContent>
             <CardActions>
-            
-            <Button onClick={() =>onDelete(id)}>削除</Button>
             <Button size="small">詳細をみる</Button>
             </CardActions>
         </Card>

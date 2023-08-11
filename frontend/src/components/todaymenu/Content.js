@@ -1,26 +1,38 @@
 import { Grid } from '@material-ui/core'
 import React from 'react'
 
-import BodyCard2 from '../trash/BodyCard2'
+import BodyCard2 from './BodyCardAd'
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
-import BodyCard3 from './BodyCard';
+import BodyCardUser from './BodyCardUser';
+import BodyCardAd from './BodyCardAd';
+import { db } from '../firebase/firebase.js';
+import { doc, deleteDoc } from 'firebase/firestore';
 
 
-function Content3(props) {
-    const { posts } = props;
+function Content(props) {
+    const {mode, posts } = props;
     console.log(posts);
 
-    // const handleDelete = (idToDelete) => {
-    //     const updatedTaskList = taskList.filter(task => task.id !== idToDelete);
-    //     setTaskList(updatedTaskList);
-    // };
+    async function deleteDocumentById(docId) {
+        const documentRef = doc(db, 'posts', docId);
+        await deleteDoc(documentRef);
+    }
+
+    const handleDelete = (idToDelete) => {
+        console.log(idToDelete);
+        deleteDocumentById(String(idToDelete));
+
+    };
 
     const getCardContent = (post, index) => {
         return (
             <Grid item xs={12} sm={4} key={index}>
-                {/* <BodyCard2 {...post} onDelete={handleDelete} /> */}
-                <BodyCard3 {...post} />
+            {mode === 'admin' ? (
+                <BodyCardAd {...post} onDelete={handleDelete} />
+            ) : (
+                <BodyCardUser {...post} onDelete={handleDelete} />
+            )}
             </Grid>
         );
     };
@@ -31,4 +43,4 @@ function Content3(props) {
     )
 }
 
-export default Content3
+export default Content

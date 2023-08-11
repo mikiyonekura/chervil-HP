@@ -3,11 +3,11 @@ import {db} from './firebase';
 import { useEffect, useState } from 'react';
 import {collection, getDocs} from 'firebase/firestore';
 import { onSnapshot } from 'firebase/firestore';
-import BodyCard3 from '../todaymenu/BodyCard';
-import Content3 from '../todaymenu/Content';
+import Content from '../todaymenu/Content';
 
 
-function Db() {
+function Db({mode}) {
+  
   const [posts, setPosts] = useState([]);
 
   //リロードの時に一回だけ実行
@@ -38,7 +38,9 @@ function Db() {
 
   return (
   
-    <Content3 posts={posts} />
+    <div>
+    <Content mode={mode} posts={posts} />
+    </div>
 
 
   );
