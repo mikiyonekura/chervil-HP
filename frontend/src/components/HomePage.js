@@ -8,7 +8,9 @@ import view from "../images/view.jpg";
 import insta from "../images/icon_instagram.png"
 import {Link} from "react-router-dom";
 import Navigation from "./parts/Navigation";
-import Header from "./parts/Header";
+import Chatbot from "react-chatbot-kit";
+import config, { MessageParser, ActionProvider } from "./ChatConfig";
+import 'react-chatbot-kit/build/main.css';
 
 
 const HomePage = () => {
@@ -88,6 +90,14 @@ const HomePage = () => {
 
 
             </section>
+
+            <div className='chatbot'>
+                <Chatbot 
+                    config={config}
+                    messageParser={MessageParser}
+                    actionProvider={ActionProvider}
+                />
+            </div>
 
             </ div>
 

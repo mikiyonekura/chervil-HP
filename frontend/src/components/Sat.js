@@ -22,6 +22,11 @@ const Sat = () => {
         }
     };
 
+    const total = 0;
+    console.log(total)
+
+    
+
 
   return (
     <div className='container'>
@@ -32,6 +37,7 @@ const Sat = () => {
                     お菓子の組み合わせを作る
                 </Button>
             </div>
+
 
         </div>
 
