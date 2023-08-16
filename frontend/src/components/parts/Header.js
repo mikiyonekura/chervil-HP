@@ -27,6 +27,7 @@ import Chat from '../Chat';
 
 
 
+
 const drawerWidth = 340;
 
 const openedMixin = (theme) => ({
@@ -196,7 +197,7 @@ export default function Header() {
               </ListItem>
             ))} */}
 
-          <Chat />
+          <Chat open={open}/>
 
         </List>
       </Drawer>

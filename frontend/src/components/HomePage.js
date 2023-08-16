@@ -91,14 +91,6 @@ const HomePage = () => {
 
             </section>
 
-            <div className='chatbot'>
-                <Chatbot 
-                    config={config}
-                    messageParser={MessageParser}
-                    actionProvider={ActionProvider}
-                />
-            </div>
-
             </ div>
 
     </div>

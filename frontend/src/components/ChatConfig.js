@@ -35,7 +35,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
 
 const config = {
-  initialMessages: [createChatBotMessage(`Hello world`)],
+  initialMessages: [createChatBotMessage(`answer any question`)],
+  botName: "chervilBot",
+
 };
 
 
