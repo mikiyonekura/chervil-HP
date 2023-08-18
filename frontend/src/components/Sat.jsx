@@ -31,7 +31,7 @@ const Sat = () => {
   return (
     <div className='container'>
         <div id = "contents">
-            <p>セット販売の組み合わせを自動で生成する機能を作成予定です</p>
+            <p>セット販売の組み合わせを自動で生成する機能を作成予定です！</p>
             <div>
                 <Button style={{ height: "53px" }} onClick={sendGet} variant="contained" color="primary">
                     お菓子の組み合わせを作る
