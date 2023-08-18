@@ -18,12 +18,11 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-
 import { auth } from '../firebase/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import Chat from '../Chat';
 
-
-const drawerWidth = 240;
+const drawerWidth = 340;
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -102,12 +101,10 @@ export default function Header() {
     setOpen(false);
   };
 
-
-
   const [user] = useAuthState(auth)
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex'}}>
       <CssBaseline />
       <AppBar position="fixed" color="default" open={open}>
         <Toolbar>
@@ -123,14 +120,21 @@ export default function Header() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            atelier chervilcoju
+          <Typography style={{display: "flex"}} variant="h6" noWrap component="div">
+
+            <p>atelier chervilcoju</p>
+
+            
+            {
+            user&& 
+              <div className='icon' style={{marginTop: '22px'}}>
+                <img src={auth.currentUser.photoURL} style={{marginLeft: '600px'}} alt="user photo" />
+              </div>
+            }
+
+
           </Typography>
-            {/* <div>
-              <h2>ユーザー名：{user.displayName}</h2>
-              <h2>メールアドレス：{user.email}</h2>
-              <img src={auth.currentUser.photoURL} alt="user photo" />
-            </div> */}
+
           
         </Toolbar>
       </AppBar>
@@ -165,30 +169,34 @@ export default function Header() {
             </ListItem>
           ))}
         </List>
+
         <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
+            {/* {['All mail', 'Trash', 'Spam'].map((text, index) => (
+              <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
+                    minHeight: 48,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : 'auto',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            ))} */}
+
+          <Chat open={open}/>
+
         </List>
       </Drawer>
       {/* <Box component="main" sx={{ flexGrow: 1, p: 3 }}>

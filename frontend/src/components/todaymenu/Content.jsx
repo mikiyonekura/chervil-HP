@@ -1,7 +1,5 @@
-import { Grid } from '@material-ui/core'
+import { Grid } from '@mui/material';
 import React from 'react'
-
-import BodyCard2 from './BodyCardAd'
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 import BodyCardUser from './BodyCardUser';

@@ -10,6 +10,7 @@
 		
   }
   
+
 .App > .Routes {
 	flex: 1;
 }
@@ -34,12 +35,34 @@
 
 }
 
+
 /*ロゴ----------------------------------------------------------------------------------*/
 .logo img{
   padding: 0;
   margin: 0;
   width: 350px;
 }
+
+.icon img{
+
+	width: 30px;
+  	height: 30px;
+	border: solid rgb(111, 101, 101) ;
+  	border-radius: 50%;
+  	margin: 0 100px;
+}
+
+/*chatbot----------------------------------------------------------------------------------*/
+.chatbot{
+  margin: 20px;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+	
+}
+
 
 /*userInfo--------------------------------------------------------------------------*/
 .userInfo{
@@ -71,12 +94,16 @@ footer {
 footer a {color: #ccc;}
 footer a:hover {color: #fff;}
 footer ul{
-  
+  display: flex;
   margin: 10px;
   float: left;
-  width: 15%;
+  width: 100%;
   list-style: none;
 }
+footer ul li{
+	margin: 0px 70px;
+}
+
 #footermenu {
 	margin-left: 150px;
 	overflow: hidden;
@@ -96,9 +123,6 @@ footer ul{
 	animation-duration: 0.5S;	/*アニメーションの実行時間*/
 	animation-delay: 0.5s;		/*出現するタイミング（秒後）*/
 	animation-fill-mode: both;
-  
-  
-
   
 }
 #contents h2{
@@ -203,7 +227,6 @@ footer ul{
 	border-bottom: 1.5px solid #ccc;	/*下の線の幅、線種、色*/
 	height: 105px;
 
-
 }
 
 /*メニュー１個あたりの設定*/
@@ -307,8 +330,4 @@ footer ul{
   text-align: left;
 
 
-}
-
-.input-sweets{
-	margin-top: 30px;
 }
