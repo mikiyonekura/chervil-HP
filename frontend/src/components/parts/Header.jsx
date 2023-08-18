@@ -18,15 +18,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-
 import { auth } from '../firebase/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import Chatbot from 'react-chatbot-kit';
-import config, { ActionProvider, MessageParser } from '../ChatConfig';
 import Chat from '../Chat';
-
-
-
 
 const drawerWidth = 340;
 
@@ -107,12 +101,10 @@ export default function Header() {
     setOpen(false);
   };
 
-
-
   const [user] = useAuthState(auth)
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex'}}>
       <CssBaseline />
       <AppBar position="fixed" color="default" open={open}>
         <Toolbar>
@@ -130,11 +122,17 @@ export default function Header() {
           </IconButton>
           <Typography style={{display: "flex"}} variant="h6" noWrap component="div">
 
-            atelier chervilcoju
+            <p>atelier chervilcoju</p>
 
-            {/* <div className='icon'>
-              <img src={auth.currentUser.photoURL} alt="user photo" />
-            </div> */}
+            
+            {
+            user&& 
+              <div className='icon' style={{marginTop: '22px'}}>
+                <img src={auth.currentUser.photoURL} style={{marginLeft: '600px'}} alt="user photo" />
+              </div>
+            }
+
+
           </Typography>
 
           

@@ -1,4 +1,3 @@
-import Home from './Home';
 import {db} from './firebase';
 import { useEffect, useState } from 'react';
 import {collection, getDocs} from 'firebase/firestore';
@@ -38,9 +37,9 @@ function Db({mode}) {
 
   return (
   
-    <div>
+    
     <Content mode={mode} posts={posts} />
-    </div>
+    
 
 
   );

@@ -1,22 +1,10 @@
 import React from 'react'
-import Navigation from "../parts/Navigation";
-import { useState,useEffect } from 'react'
-import SweatsList from '../trash/SweatsList';
-
-import Content2 from '../trash/Content2';
-import { Grid } from '@material-ui/core';
-import { TextField, Button } from '@material-ui/core';
-import SendIcon from '@material-ui/icons/Send';
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import Header from '../parts/Header';
-import { Link } from 'react-router-dom';
+import { useState } from 'react'
+import { Grid, TextField, Button } from '@mui/material';
+import SendIcon from '@mui/icons-material/Send';
 import { db } from '../firebase/firebase';
-import {collection, addDoc} from 'firebase/firestore';
 import Db from '../firebase/Db';
 import { doc, setDoc } from "firebase/firestore";
-
-
-
 
 
 const TodayMenuAd = () => {
@@ -102,31 +90,9 @@ const TodayMenuAd = () => {
 
   return (
     
-    <div className='container'>
-      <Navigation />
-      <div id ="contents">
+    <div>
 
-      
-      
-      <h2>管理者モード</h2>
-
-    
-
-      {/*       
-
-      <div className="input-sweets">
-        <form onSubmit={handleSubmit}>
-          
-          <input type='text' onChange={handleChange} value={inputText} />
-          <button >追加</button>
-        </form>
-      </div>  
-
-      */}
-
-      {/*<SweatsList taskList={taskList} setTaskList={setTaskList}/>*/}
-
-    <div className="input-sweets">
+      <h3>管理者画面</h3>
 
       <Grid container direction="column">
         <Grid item>
@@ -149,20 +115,14 @@ const TodayMenuAd = () => {
 
         <Grid item container>
           <Grid item sm={2} />
-          <Grid item xs={12} sm={8}>
-          {/* <Content2 taskList={taskList} setTaskList={setTaskList} /> */}
-            <Db mode='admin'/>
-
-          </Grid>
+            <Grid item xs={12} sm={8}>
+            {/* <Content2 taskList={taskList} setTaskList={setTaskList} /> */}
+              <Db mode='admin'/>
+            </Grid>
           <Grid item sm={2} />
         </Grid>
       </Grid>
 
-
-    
-      
-      </div>
-    </div>
     </div>
     
   )

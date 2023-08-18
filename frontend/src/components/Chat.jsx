@@ -4,11 +4,11 @@ import Chatbot from 'react-chatbot-kit';
 
 const Chat = (props) => {
 
-    const isopen = props.open;
-    console.log(isopen);
+    const isOpen = props.open;
+    console.log(isOpen);
 
     return (
-        isopen ? (   // isopenがtrueの場合のみ表示
+        isOpen &&    // isopenがtrueの場合のみ表示
             <div className='chatbot'>
                 <Chatbot
                     config={config}
@@ -16,7 +16,6 @@ const Chat = (props) => {
                     actionProvider={ActionProvider}
                 />  
             </div>
-        ) : null  // isopenがfalseの場合はnullを返して何も表示しない
     );
 }
 
